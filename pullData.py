@@ -3,11 +3,10 @@ import requests
 TACO_API = "https://ct-tacoapi.azurewebsites.net"
 
 def parseData(data):
+    parsed = []
     for item in data:
-        print(item)
-    print(len(data))
-    print(data[0])
-
+        parsed.append(item["name"])
+    return parsed
 
 
 def getShells():
@@ -17,9 +16,6 @@ def getShells():
     if not clients:
         return "-"
     return parseData(clients)
-
-
-getShells()
 
 
 def getBaselayers():

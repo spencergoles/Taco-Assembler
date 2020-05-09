@@ -4,9 +4,12 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
-    return render_template()
+def renderHome():
+    return render_template('index.html')
 
+@app.route('/tacos')
+def renderTacoList():
+  return render_template('tacoList.html')
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0')
